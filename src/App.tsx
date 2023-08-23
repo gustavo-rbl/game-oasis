@@ -1,5 +1,7 @@
+import Router from "./components/Router/Router";
+
 function App() {
-  return <h2>Game Oasis</h2>;
+  return <Router />;
 }
 
 export default App;
