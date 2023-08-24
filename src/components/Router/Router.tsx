@@ -12,10 +12,12 @@ import RootLayout from "../Layout/RootLayout";
 import Home from "../../pages/Home/Home";
 import Store from "../../pages/Store/Store";
 import Game from "../../pages/Game/Game";
+import Faq from "../../pages/Faq/Faq";
+import Cart from "../../pages/Cart/Cart";
+import NotFound from "../../pages/NotFound/NotFound";
 
 // loader
 import GamesLoader from "../../services/GamesLoader";
-import NotFound from "../../pages/NotFound/NotFound";
 
 function Router() {
   const router = createBrowserRouter(
@@ -31,6 +33,8 @@ function Router() {
           loader={GamesLoader}
           errorElement={<NotFound />}
         />
+        <Route path="faq" element={<Faq />} />
+        <Route path="cart" element={<Cart />} />
 
         <Route path="*" element={<NotFound />} />
       </Route>
