@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useLocation } from "react-router-dom";
 import { GameTypes } from "../../types/types";
 import OptimizeImg from "../../modules/OptimizeImg";
 import GameGenres from "../../components/GameGenres/GameGenres";
@@ -7,6 +7,7 @@ import useGenreFilter from "../../store/genreStore";
 function Store() {
   const data = useLoaderData() as GameTypes[];
   const genresFilter = useGenreFilter((state) => state.genreFilter);
+  const { search } = useLocation();
 
   const handleFilter = () => {
     const filteredGames: GameTypes[] = [];
@@ -22,7 +23,7 @@ function Store() {
     return filteredGames;
   };
 
-  const displayedGames = genresFilter ? handleFilter() : data;
+  const displayedGames = genresFilter && search ? handleFilter() : data;
 
   return (
     <>
