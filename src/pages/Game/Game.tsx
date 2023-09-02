@@ -13,9 +13,20 @@ import Developers from "../../components/Developers/Developers";
 import Platforms from "../../components/Platforms/Platforms";
 import Genres from "../../components/Genres/Genres";
 import Tags from "../../components/Tags/Tags";
+import { useEffect } from "react";
 
 function Game() {
   const game = useLoaderData() as GameTypes;
+
+  useEffect(() => {
+    let isMounted = true;
+
+    window.scroll(0, 0);
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return (
     <section>
