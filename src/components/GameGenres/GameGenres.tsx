@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { GameTypes, GenresTypes } from "../../types/types";
 import getGenres from "../../modules/GetGenres";
 import OptimizeImg from "../../modules/OptimizeImg";
-import { useLocation, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import HeadingSecondary from "../HeadingSecondary/HeadingSecondary";
 import useGenreFilter from "../../store/genreStore";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
@@ -18,7 +19,6 @@ function GameGenres(data: GameTypes[]) {
   const genresFilterState = useGenreFilter((state) => state.genreFilter);
   const setGenresFilter = useGenreFilter((state) => state.setGenreFilter);
   const [slides, setSlides] = useState(1);
-  const { pathname } = useLocation();
 
   const setFilter = (genre: GenresTypes) => {
     setSearchParams({ genre: genre.slug });
@@ -45,14 +45,14 @@ function GameGenres(data: GameTypes[]) {
   };
 
   useEffect(() => {
-    if (pathname) handleWindowSize();
+    handleWindowSize();
 
     window.addEventListener("resize", handleWindowSize);
 
     return () => {
       window.removeEventListener("resize", handleWindowSize);
     };
-  }, [pathname]);
+  }, []);
 
   return (
     <>
@@ -70,7 +70,7 @@ function GameGenres(data: GameTypes[]) {
           <SwiperSlide key={genre.id} onClick={() => setFilter(genre)}>
             <div>
               <img src={OptimizeImg(genre.img)} alt={genre.name} />
-              <h3>{genre.name}</h3>
+              <HeadingSecondary text={genre.name} />
             </div>
           </SwiperSlide>
         ))}
