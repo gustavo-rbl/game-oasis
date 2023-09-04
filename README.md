@@ -1,6 +1,6 @@
 # game-oasis
 
-Game Oasis is fully functional ecommerce website built with React. It allows users to browse video games, add them to cart, and manage their orders. I created this project to practice my skills in React, React Router, fetching data in React, Zustand state management, and ecommerce development. You can view the live demo [here](https://gustavo-rbl.github.io/game-oasis/).
+Game Oasis is fully functional ecommerce website built with React. It allows users to browse video games, add them to cart, and manage their orders. I created this project to practice my skills in React, React Router, fetching data in React, Zustand state management, and ecommerce development. You can view the live demo [here](https://game-oasis.netlify.app/).
 
 ## Features
 
