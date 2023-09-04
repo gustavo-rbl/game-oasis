@@ -1,0 +1,10 @@
+@use "../../style/style.scss" as *;
+
+.metacritic {
+  @include displayFlex($size-1, nowrap, column, center, center);
+  border-radius: $pri-brd-rad;
+  font-family: $font-heading;
+  font-size: $size-fluid-2;
+  font-weight: 900;
+  padding: $pri-padding;
+}

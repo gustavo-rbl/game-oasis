@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { MetacriticTypes } from "../../types/types";
 
+// style
+import style from "./Metacritic.module.scss";
+
 function Metacritic({ metacritic }: MetacriticTypes) {
   const [color, setColor] = useState("");
 
@@ -20,6 +23,10 @@ function Metacritic({ metacritic }: MetacriticTypes) {
     };
   }, [metacritic]);
 
-  return <p style={{ backgroundColor: color }}>{metacritic}</p>;
+  return (
+    <p style={{ backgroundColor: color }} className={style.metacritic}>
+      {metacritic}
+    </p>
+  );
 }
 export default Metacritic;

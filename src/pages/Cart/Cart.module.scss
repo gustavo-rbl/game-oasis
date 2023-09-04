@@ -1,0 +1,58 @@
+@use "../../style/style.scss" as *;
+
+.cart {
+  @include jelloDisplay(1200px, $size-1);
+  @include displayFlex($size-2, nowrap, column);
+  min-height: 90vh;
+
+  &_empty_msg {
+    @include button($gray-10, $gray-0, $pri-brd-rad);
+    margin-bottom: $size-2;
+  }
+
+  &_items {
+    display: grid;
+    gap: $size-1;
+
+    @include mediaQuery("desktop") {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+}
+
+.cards {
+  @include displayFlex($size-1, nowrap, column);
+}
+
+.card {
+  @include displayFlex($size-1, wrap, column, center, space-between);
+  background-color: $gray-11;
+  border-radius: $pri-brd-rad;
+  padding: $pri-padding;
+  text-align: center;
+
+  &_image {
+    display: block;
+    width: 100px;
+    border-radius: $pri-brd-rad;
+  }
+
+  @include mediaQuery("tablet") {
+    @include displayFlex($size-1, wrap, row, center, space-between);
+  }
+}
+
+.checkout {
+  background-color: $gray-11;
+  border-radius: $pri-brd-rad;
+  padding: $pri-padding;
+
+  &_flex_space_between {
+    @include displayFlex($size-1, wrap, row, center, space-between);
+  }
+
+  &_button {
+    display: block;
+    margin: 1rem 0 0 auto;
+  }
+}

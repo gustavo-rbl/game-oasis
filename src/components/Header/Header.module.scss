@@ -1,0 +1,79 @@
+@use "../../style/style.scss" as *;
+
+.header {
+  @include jelloDisplay(1400px, $pri-padding);
+  @include displayFlex($size-1, wrap, row, center, space-between);
+
+  &_hero {
+    @include displayFlex($size-1, wrap, row, center, center);
+    @include transition($pri-duration);
+    @include resetLink($gray-0);
+
+    &_logo {
+      @include icon($gray-0, $size-fluid-2);
+    }
+
+    &_name {
+      display: none;
+    }
+
+    &:where(:hover, :focus) {
+      @include boxShadowInset($gray-0);
+    }
+  }
+
+  &_nav {
+    @include transition($pri-duration);
+    @include displayFlex($size-1, wrap, column, center, center);
+    position: absolute;
+    top: -100%;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+    background-color: $gray-11;
+  }
+
+  &_nav_active {
+    top: 0;
+  }
+
+  &_navLinks {
+    @include resetList;
+    @include displayFlex($size-2, wrap, column, center, center);
+    text-align: center;
+
+    & a {
+      @include resetLink($gray-0);
+      @include transition($pri-duration);
+
+      &:where(:hover, :focus) {
+        @include boxShadowInset($gray-0);
+      }
+    }
+
+    &_active {
+      @include boxShadowInset($purple-7);
+    }
+  }
+
+  &_menu {
+    @include icon($gray-0, $size-fluid-2);
+    z-index: 20;
+  }
+
+  @include mediaQuery("tablet") {
+    &_hero_name {
+      display: block;
+      font-size: $size-fluid-2;
+    }
+
+    &_navLinks {
+      & a {
+        border: none;
+        border-radius: 0;
+        padding: 0;
+      }
+    }
+  }
+}

@@ -1,12 +1,17 @@
 import { GameGenresTypes } from "../../types/types";
-import HeadingSecondary from "../HeadingSecondary/HeadingSecondary";
+
+// component
+import HeadingPrimary from "../HeadingPrimary/HeadingPrimary";
+
+// style
+import globalStyle from "../../style/global/Global.module.scss";
 
 function Genres({ genres }: GameGenresTypes) {
   return (
     <>
-      <HeadingSecondary text="Genres:" />
+      <HeadingPrimary text="Genres:" />
 
-      <ul>
+      <ul className={globalStyle.list_buttons}>
         {genres.map((genre) => (
           <li key={genre.id}>{genre.name}</li>
         ))}

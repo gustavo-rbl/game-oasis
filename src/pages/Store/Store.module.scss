@@ -1,0 +1,62 @@
+@use "../../style/style.scss" as *;
+
+.store {
+  @include jelloDisplay(1400px, $size-1);
+
+  &_bracket {
+    height: 2px;
+    background-color: $gray-0;
+    border-radius: $pri-brd-rad;
+    margin-block: $size-1;
+  }
+
+  &_hero {
+    font-size: $size-fluid-2;
+  }
+
+  &_card {
+    @include transition($pri-duration);
+    @include resetLink($gray-0);
+    border-radius: $pri-brd-rad;
+    overflow: hidden;
+    background-color: $gray-10;
+
+    &_details {
+      padding: $pri-padding;
+    }
+
+    &_name {
+      font-size: $size-fluid-2;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    & img {
+      display: block;
+      width: 100%;
+    }
+
+    &_price {
+      @include displayFlex($size-1, wrap, row, center, space-between);
+    }
+
+    &:where(:hover, :focus) {
+      scale: 1.05;
+    }
+  }
+
+  &_cards {
+    display: grid;
+    gap: $size-2;
+
+    @include mediaQuery("tablet") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mediaQuery("desktop") {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

@@ -1,0 +1,46 @@
+// font
+$font-heading: "Roboto", sans-serif;
+$font-text: "Nunito", sans-serif;
+
+// size
+$size-1: 1rem;
+$size-2: 2rem;
+$size-3: 3rem;
+$size-4: 4rem;
+$size-5: 5rem;
+$size-fluid-1: clamp(1rem, 1.5vw, 1.2rem);
+$size-fluid-2: clamp(1.5rem, 3vw, 2rem);
+
+// color
+$gray-0: #f8f9fa;
+$gray-1: #f1f3f5;
+$gray-2: #e9ecef;
+$gray-3: #dee2e6;
+$gray-4: #ced4da;
+$gray-5: #adb5bd;
+$gray-6: #868e96;
+$gray-7: #495057;
+$gray-8: #343a40;
+$gray-9: #212529;
+$gray-10: #16191d;
+$gray-11: #0d0f12;
+$gray-12: #030507;
+
+$purple-0: #f8f0fc;
+$purple-1: #f3d9fa;
+$purple-2: #eebefa;
+$purple-3: #e599f7;
+$purple-4: #da77f2;
+$purple-5: #cc5de8;
+$purple-6: #be4bdb;
+$purple-7: #ae3ec9;
+$purple-8: #9c36b5;
+$purple-9: #862e9c;
+$purple-10: #702682;
+$purple-11: #5a1e69;
+$purple-12: #44174f;
+
+// misc
+$pri-padding: $size-1;
+$pri-duration: 250ms;
+$pri-brd-rad: 10px;

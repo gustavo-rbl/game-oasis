@@ -1,0 +1,12 @@
+@use "../../style/style.scss" as *;
+
+.swiper {
+  width: clamp(12rem, 90vw, 40rem);
+  height: 100%;
+
+  &_image {
+    width: 100%;
+    border-radius: $pri-brd-rad;
+    cursor: grabbing;
+  }
+}

@@ -1,0 +1,46 @@
+@use "../../style/style.scss" as *;
+
+.notFound {
+  @include jelloDisplay(1400px, $size-1);
+  @include displayFlex($size-1, wrap, row, center, center);
+  min-height: 90vh;
+}
+
+.card {
+  @include displayFlex($size-1, wrap, row, center, center);
+  overflow: hidden;
+  border-radius: $pri-brd-rad;
+  background-color: $gray-10;
+  position: relative;
+
+  &_banner {
+    background-color: $gray-11;
+    max-width: 250px;
+    padding: calc($pri-padding * 2);
+  }
+
+  &_image {
+    width: 100%;
+  }
+
+  &_message {
+    padding: calc($pri-padding * 2);
+  }
+
+  &_progress {
+    background-image: linear-gradient(to right, $gray-12, #01233f, #183776, #5c43a7, $purple-7);
+    border-radius: $pri-brd-rad;
+    bottom: 0;
+    height: 10px;
+    position: absolute;
+    transform: translateX(-100%);
+    width: 100%;
+    transition: all 250ms ease;
+  }
+
+  &_timer {
+    position: absolute;
+    top: $size-1;
+    right: $size-1;
+  }
+}

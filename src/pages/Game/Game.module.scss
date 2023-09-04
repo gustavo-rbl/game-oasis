@@ -1,0 +1,43 @@
+@use "../../style/style.scss" as *;
+
+.game {
+  @include jelloDisplay(1200px, $size-1);
+  display: grid;
+  gap: $size-1;
+
+  &_return {
+    @include resetLink($gray-0);
+    @include transition($pri-duration);
+    width: fit-content;
+
+    &:where(:hover, :focus) {
+      @include boxShadowInset($gray-0);
+    }
+  }
+
+  &_showcase {
+    display: grid;
+    gap: $size-2;
+
+    @include mediaQuery("desktop") {
+      grid-template-columns: repeat(2, 2fr);
+    }
+  }
+
+  &_manager {
+    @include displayFlex($size-1, nowrap, column);
+  }
+
+  &_rating {
+    @include displayFlex($size-2, nowrap, row);
+    margin-bottom: $size-2;
+  }
+
+  &_tag {
+    background-color: $gray-10;
+    border-radius: $pri-brd-rad;
+    color: $gray-0;
+    padding: 10px 15px;
+    width: fit-content;
+  }
+}

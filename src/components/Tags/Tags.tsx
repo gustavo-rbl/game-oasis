@@ -1,12 +1,15 @@
 import { TagsTypes } from "../../types/types";
-import HeadingSecondary from "../HeadingSecondary/HeadingSecondary";
+import HeadingPrimary from "../HeadingPrimary/HeadingPrimary";
+
+// style
+import globalStyle from "../../style/global/Global.module.scss";
 
 function Tags({ tags }: TagsTypes) {
   return (
     <>
-      <HeadingSecondary text="Tags:" />
+      <HeadingPrimary text="Tags:" />
 
-      <ul>
+      <ul className={globalStyle.list_buttons}>
         {tags.map((tag) => (
           <li key={tag.id}>{tag.name}</li>
         ))}

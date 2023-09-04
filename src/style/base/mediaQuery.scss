@@ -1,0 +1,10 @@
+$breakpoints: (
+  "tablet": 48rem,
+  "desktop": 65rem,
+);
+
+@mixin mediaQuery($device) {
+  @media (min-width: map-get($breakpoints, $device)) {
+    @content;
+  }
+}

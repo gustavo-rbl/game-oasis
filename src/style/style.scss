@@ -1,0 +1,13 @@
+@forward "./base/reset.scss";
+@forward "./base/font.scss";
+@forward "./base/variables.scss";
+@forward "./base/mediaQuery.scss";
+@forward "./mixin/mixin.scss";
+@use "./base/variables.scss" as *;
+
+body {
+  background-color: $gray-12;
+  color: $gray-0;
+  font-family: $font-text;
+  font-size: $size-fluid-1;
+}

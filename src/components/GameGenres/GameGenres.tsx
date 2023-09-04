@@ -3,14 +3,17 @@ import { GameTypes, GenresTypes } from "../../types/types";
 import getGenres from "../../modules/GetGenres";
 import OptimizeImg from "../../modules/OptimizeImg";
 import { useSearchParams } from "react-router-dom";
-import HeadingSecondary from "../HeadingSecondary/HeadingSecondary";
 import useGenreFilter from "../../store/genreStore";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
+import { FaX } from "react-icons/fa6";
+
+// style
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import "./style.css";
+import style from "./GameGenres.module.scss";
 
 function GameGenres(data: GameTypes[]) {
   const genres = getGenres(data);
@@ -64,26 +67,30 @@ function GameGenres(data: GameTypes[]) {
           clickable: true,
         }}
         modules={[FreeMode, Pagination]}
-        className="mySwiper"
+        className={style.swiper}
       >
         {genres.map((genre: GenresTypes) => (
-          <SwiperSlide key={genre.id} onClick={() => setFilter(genre)}>
-            <div>
-              <img src={OptimizeImg(genre.img)} alt={genre.name} />
-              <HeadingSecondary text={genre.name} />
+          <SwiperSlide key={genre.id} className={style.swiper_slide}>
+            <div onClick={() => setFilter(genre)} className={style.swiper_slide_card}>
+              <img src={OptimizeImg(genre.img)} alt={genre.name} className={style.swiper_image} />
+              <h2>{genre.name}</h2>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
-      <h2>
+      <hr />
+
+      <h2 className={style.swiper_filter}>
         {genresFilter ? (
           <>
-            <span>Filtered By:</span> <span>{genresFilterState?.name}</span>{" "}
-            <span onClick={clearFilter}>Clear filter</span>
+            <p className={style.font_small}>Filtered By:</p>{" "}
+            <p>
+              {genresFilterState?.name} <FaX onClick={clearFilter} className={style.clear_filter} />
+            </p>
           </>
         ) : (
-          "Popular Games"
+          "Games:"
         )}
       </h2>
     </>

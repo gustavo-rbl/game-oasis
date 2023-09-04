@@ -1,0 +1,46 @@
+@mixin jelloDisplay($size, $padding) {
+  margin: auto;
+  max-width: $size;
+  padding: $padding;
+}
+
+@mixin displayFlex($gap, $wrap: nowrap, $direction: null, $align: null, $justify: null) {
+  display: flex;
+  align-items: $align;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  gap: $gap;
+  justify-content: $justify;
+}
+
+@mixin resetLink($color) {
+  color: $color;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+@mixin resetList() {
+  list-style: none;
+}
+
+@mixin boxShadowInset($color) {
+  box-shadow: inset 0px -2px 0px 0px $color;
+}
+
+@mixin icon($color, $size) {
+  color: $color;
+  cursor: pointer;
+  font-size: $size;
+}
+
+@mixin transition($duration) {
+  transition: all $duration cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+@mixin button($bg-clr, $clr, $brd-rad) {
+  background-color: $bg-clr;
+  border-radius: $brd-rad;
+  color: $clr;
+  padding: 10px 15px;
+  text-decoration: none;
+}

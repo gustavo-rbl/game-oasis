@@ -1,18 +1,3 @@
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-pagination-bullet {
-  background-color: #fff;
-}
-
-.swiper-pagination-bullet-active {
-  background: #007aff;
+:root {
+  --swiper-pagination-bullet-inactive-color: hsl(210, 17%, 98%);
 }

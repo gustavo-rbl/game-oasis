@@ -1,12 +1,15 @@
 import { DevelopersTypes } from "../../types/types";
-import HeadingSecondary from "../HeadingSecondary/HeadingSecondary";
+
+// style
+import globalStyle from "../../style/global/Global.module.scss";
+import HeadingPrimary from "../HeadingPrimary/HeadingPrimary";
 
 function Developers({ developers }: DevelopersTypes) {
   return (
     <>
-      <HeadingSecondary text={developers.length > 1 ? "Developers" : "Developer"} />
+      <HeadingPrimary text={developers.length > 1 ? "Developers:" : "Developer:"} />
 
-      <ul>
+      <ul className={globalStyle.list_buttons}>
         {developers.map((dev) => (
           <li key={dev.id}>{dev.name}</li>
         ))}

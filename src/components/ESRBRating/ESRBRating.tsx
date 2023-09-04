@@ -1,10 +1,15 @@
+import { useEffect, useState } from "react";
 import { ESRBRatingTypes } from "../../types/types";
+
+// assets
 import Everyone from "../../assets/esrb_rating/E.svg";
 import Everyone10 from "../../assets/esrb_rating/E10plus.svg";
 import Teen from "../../assets/esrb_rating/T.svg";
 import Mature from "../../assets/esrb_rating/M.svg";
 import RatingPending from "../../assets/esrb_rating/RP.svg";
-import { useEffect, useState } from "react";
+
+// style
+import style from "./ESRBRating.module.scss";
 
 function ESRBRating({ esrb_rating }: ESRBRatingTypes) {
   const [rating, setRating] = useState(RatingPending);
@@ -38,7 +43,7 @@ function ESRBRating({ esrb_rating }: ESRBRatingTypes) {
     };
   }, [esrb_rating]);
 
-  return <img src={rating} alt="ESRB Rating" />;
+  return <img src={rating} alt="ESRB Rating" className={style.esrb_image} />;
 }
 
 export default ESRBRating;

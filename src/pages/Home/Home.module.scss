@@ -1,0 +1,47 @@
+@use "../../style/style.scss" as *;
+
+.home {
+  @include jelloDisplay(1400px, $size-1);
+  @include displayFlex($size-1, wrap, row, center, space-between);
+  min-height: 90vh;
+
+  &_container {
+    background-color: $gray-12;
+    border-radius: $pri-brd-rad;
+    padding: calc($pri-padding * 2);
+    max-width: 400px;
+  }
+
+  &_hero {
+    font-size: $size-fluid-2;
+  }
+
+  & ul {
+    @include resetList;
+  }
+
+  &_button {
+    @include resetLink($gray-0);
+    @include transition($pri-duration);
+    background-color: $gray-10;
+    display: block;
+    border-radius: $pri-brd-rad;
+    padding: 5px 15px;
+    margin-top: $size-2;
+    width: max-content;
+
+    &:where(:hover, :focus) {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}

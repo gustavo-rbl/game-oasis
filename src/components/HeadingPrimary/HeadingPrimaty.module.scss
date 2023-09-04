@@ -1,0 +1,7 @@
+@use "../../style/style.scss" as *;
+
+.heading {
+  font-family: $font-heading;
+  font-size: $size-fluid-2;
+  font-weight: 900;
+}

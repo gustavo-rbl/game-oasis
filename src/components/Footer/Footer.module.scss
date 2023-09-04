@@ -1,0 +1,53 @@
+@use "../../style/style.scss" as *;
+
+.footer {
+  background-color: $gray-11;
+
+  &_container {
+    @include jelloDisplay(1400px, $pri-padding);
+    padding: $pri-padding;
+  }
+
+  &_hero {
+    @include displayFlex($size-1, wrap, row, center, start);
+    font-size: $size-fluid-2;
+  }
+
+  &_nav {
+    @include displayFlex($size-1, wrap, column, start, center);
+
+    & ul {
+      @include resetList;
+
+      & li:first-child {
+        font-size: $size-fluid-2;
+      }
+
+      & li:not(:first-child) {
+        @include transition($pri-duration);
+        cursor: pointer;
+        width: fit-content;
+
+        &:where(:hover, :focus) {
+          @include boxShadowInset($gray-0);
+        }
+      }
+    }
+
+    @include mediaQuery("tablet") {
+      @include displayFlex($size-1, wrap, row, start, space-between);
+    }
+  }
+
+  & p a {
+    color: $gray-0;
+  }
+
+  &_github {
+    @include displayFlex($size-1, wrap, row, start, flex-start);
+
+    &_icon {
+      @include icon($gray-0, $size-fluid-2);
+    }
+  }
+}

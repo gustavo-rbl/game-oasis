@@ -1,0 +1,51 @@
+@use "../../style/style.scss" as *;
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+
+  &_slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $size-1 0 $size-3;
+
+    &_card {
+      background-color: $gray-10;
+      border-radius: $pri-brd-rad;
+      padding: $pri-padding;
+      cursor: pointer;
+    }
+  }
+
+  &_image {
+    max-width: 200px;
+    border-radius: $pri-brd-rad;
+    margin: auto;
+  }
+
+  &_filter {
+    font-size: $size-fluid-2;
+    margin-bottom: $size-1;
+  }
+}
+
+.font_small {
+  font-size: $size-fluid-1;
+}
+
+.clear_filter {
+  @include transition($pri-duration);
+  border-radius: 50%;
+  border: 1px solid $gray-0;
+  cursor: pointer;
+  font-size: calc($size-1 / 1.5);
+  
+  padding: 3px;
+
+  &:where(:hover, :focus) {
+    color: $purple-7;
+    border-color: $purple-7;
+  }
+}

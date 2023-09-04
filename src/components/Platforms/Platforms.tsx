@@ -1,12 +1,17 @@
 import { PlatformsTypes } from "../../types/types";
-import HeadingSecondary from "../HeadingSecondary/HeadingSecondary";
+
+// component
+import HeadingPrimary from "../HeadingPrimary/HeadingPrimary";
+
+// style
+import globalStyle from "../../style/global/Global.module.scss";
 
 function Platforms({ platforms }: PlatformsTypes) {
   return (
     <>
-      <HeadingSecondary text="Platforms:" />
+      <HeadingPrimary text="Platforms:" />
 
-      <ul>
+      <ul className={globalStyle.list_buttons}>
         {platforms.map((platform) => (
           <li key={platform.platform.id}>{platform.platform.name}</li>
         ))}

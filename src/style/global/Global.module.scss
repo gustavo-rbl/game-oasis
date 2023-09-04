@@ -1,0 +1,54 @@
+@use "../style.scss" as *;
+
+.button {
+  @include transition($pri-duration);
+  @include button($gray-10, $gray-0, $pri-brd-rad);
+  border: none;
+  cursor: pointer;
+  font-size: $size-fluid-1;
+  padding: 10px 15px;
+
+  &:where(:hover, :focus) {
+    @include button($gray-0, $gray-10, $pri-brd-rad);
+  }
+}
+
+.list_buttons {
+  @include resetList;
+  @include displayFlex($size-1, wrap, row, center, flex-start);
+
+  & li {
+    @include button($gray-10, $gray-0, $pri-brd-rad);
+  }
+}
+
+.text_center {
+  text-align: center;
+}
+
+// animation
+@media (prefers-reduced-motion: no-preference) {
+  .fadeIn {
+    animation: fadeIn calc($pri-duration * 4) ease forwards;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .errorSlideRight {
+    animation: errorSlideRight 20s ease forwards;
+  }
+
+  @keyframes errorSlideRight {
+    100% {
+      transform: translateX(0);
+    }
+  }
+}

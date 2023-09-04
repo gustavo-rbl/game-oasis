@@ -1,0 +1,9 @@
+@use "../../style/style.scss" as *;
+
+.content_manager {
+  @include displayFlex($size-1, wrap, row, center, space-between);
+  background-color: $gray-0;
+  border-radius: $pri-brd-rad;
+  color: $gray-12;
+  padding: $pri-padding;
+}
